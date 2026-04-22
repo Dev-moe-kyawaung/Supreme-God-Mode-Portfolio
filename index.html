@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dev Moe Kyaw Aung | Enterprise Supreme Portfolio</title>
+  <meta name="description" content="Enterprise Supreme of God Mode developer portfolio powered by GitHub API, Bootstrap 5, premium UI and deploy-ready architecture.">
+  <meta name="keywords" content="GitHub Portfolio, Developer Portfolio, Bootstrap 5, GitHub API, Premium Portfolio">
+  <meta name="author" content="Dev Moe Kyaw Aung">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dev Moe Kyaw Aung | Enterprise Supreme Portfolio">
+  <meta property="og:description" content="Premium developer portfolio with GitHub API auto fetch, filters, modals, animations, and deploy-ready setup.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dev Moe Kyaw Aung | Enterprise Supreme Portfolio">
+  <meta name="twitter:description" content="Premium developer portfolio with GitHub API auto fetch and enterprise-ready structure.">
+  <meta name="twitter:image" content="assets/img/og-image.png">
+
+  <link rel="icon" href="assets/img/favicon.png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-github me-2"></i>Enterprise Supreme
+      </a>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <a id="cvBtn" href="#" target="_blank" class="btn btn-sm btn-outline-premium">
+          <i class="bi bi-download me-1"></i>CV
+        </a>
+        <button id="themeToggle" class="btn btn-sm btn-outline-theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-card p-4 p-lg-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-4 text-center">
+            <img id="avatar" class="hero-avatar" src="assets/img/profile-placeholder.png" alt="Profile Avatar">
+          </div>
+          <div class="col-lg-8">
+            <span class="badge-custom">Enterprise Supreme of God Mode</span>
+            <h1 id="name" class="display-4 fw-bold mt-3">Loading...</h1>
+            <p id="username" class="text-muted-custom fs-5 mb-2">@loading</p>
+            <p class="lead mb-2">
+              <span id="typewriter" class="typewriter text-gradient"></span>
+            </p>
+            <p id="bio" class="text-muted-custom">Fetching profile information...</p>
+
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a id="githubProfileBtn" href="#" target="_blank" class="btn btn-premium">
+                <i class="bi bi-box-arrow-up-right me-2"></i>GitHub Profile
+              </a>
+              <a id="blogBtn" href="#" target="_blank" class="btn btn-outline-premium d-none">
+                <i class="bi bi-globe2 me-2"></i>Website
+              </a>
+              <a id="contactBtn" href="#contact" class="btn btn-outline-premium">
+                <i class="bi bi-send me-2"></i>Contact
+              </a>
+            </div>
+
+            <div class="row g-3 mt-4">
+              <div class="col-6 col-md-3">
+                <div class="stats-card p-3 text-center">
+                  <div class="stats-number counter" data-target="0" id="reposCount">0</div>
+                  <div class="text-muted-custom">Repos</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="stats-card p-3 text-center">
+                  <div class="stats-number counter" data-target="0" id="followersCount">0</div>
+                  <div class="text-muted-custom">Followers</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="stats-card p-3 text-center">
+                  <div class="stats-number counter" data-target="0" id="followingCount">0</div>
+                  <div class="text-muted-custom">Following</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="stats-number location-text stats-card p-3 text-center" id="locationText">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="section-card p-4 mt-4">
+        <h2 class="section-title">About Developer</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="info-box">
+              <h5><i class="bi bi-person-badge me-2"></i>Username</h5>
+              <p id="aboutUsername" class="text-muted-custom mb-0">-</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-box">
+              <h5><i class="bi bi-envelope me-2"></i>Email</h5>
+              <p id="emailText" class="text-muted-custom mb-0">Not Public</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-box">
+              <h5><i class="bi bi-link-45deg me-2"></i>Profile URL</h5>
+              <p class="mb-0">
+                <a id="profileUrlText" href="#" target="_blank" class="text-info text-decoration-none">Open Profile</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="section-card p-4 mt-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+          <h2 class="section-title mb-0">Skills</h2>
+          <span class="small-pill">Editable from config.json</span>
+        </div>
+        <div class="d-flex flex-wrap gap-2" id="skillsContainer"></div>
+      </div>
+
+      <!-- Featured -->
+      <div class="section-card p-4 mt-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+          <h2 class="section-title mb-0">Featured Repositories</h2>
+          <span class="small-pill">Top Star Projects</span>
+        </div>
+        <div class="row g-4" id="featuredRepos"></div>
+      </div>
+
+      <!-- Controls -->
+      <div class="section-card p-4 mt-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+          <h2 class="section-title mb-0">Repositories Portfolio</h2>
+          <span class="small-pill">Search • Filter • Sort • Modal</span>
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-4">
+            <input type="text" id="searchInput" class="form-control custom-input" placeholder="Search repositories...">
+          </div>
+          <div class="col-md-4">
+            <select id="languageFilter" class="form-select custom-input">
+              <option value="all">All Languages</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select id="sortFilter" class="form-select custom-input">
+              <option value="updated">Sort by Updated</option>
+              <option value="stars">Sort by Stars</option>
+              <option value="name">Sort by Name</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="loadingRepos" class="row g-4">
+          <div class="col-md-4"><div class="skeleton-card"></div></div>
+          <div class="col-md-4"><div class="skeleton-card"></div></div>
+          <div class="col-md-4"><div class="skeleton-card"></div></div>
+        </div>
+
+        <div id="errorMessage" class="d-none"></div>
+        <div class="row g-4" id="reposContainer"></div>
+      </div>
+
+      <!-- Contact -->
+      <div id="contact" class="section-card p-4 mt-4 mb-5">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+          <h2 class="section-title mb-0">Contact</h2>
+          <span class="small-pill">Formspree Ready</span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="info-box h-100">
+              <h5><i class="bi bi-github me-2"></i>GitHub</h5>
+              <p><a id="contactGithub" href="#" target="_blank" class="text-info text-decoration-none">Open GitHub</a></p>
+
+              <h5><i class="bi bi-globe2 me-2"></i>Website</h5>
+              <p><a id="contactWebsite" href="#" target="_blank" class="text-info text-decoration-none">No Website</a></p>
+
+              <h5><i class="bi bi-file-earmark-arrow-down me-2"></i>CV</h5>
+              <p><a id="contactCv" href="#" target="_blank" class="text-info text-decoration-none">Download CV</a></p>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control custom-input" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control custom-input" placeholder="Your Email" required>
+                </div>
+                <div class="col-12">
+                  <input type="text" name="subject" class="form-control custom-input" placeholder="Subject" required>
+                </div>
+                <div class="col-12">
+                  <textarea name="message" rows="5" class="form-control custom-input" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-premium">
+                    <i class="bi bi-send me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div id="formNotice" class="mt-3 text-success d-none">Message form is ready. Replace Formspree form ID to activate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <div class="container text-center">
+      <p class="mb-1">Built with Bootstrap 5 + GitHub API + Config JSON</p>
+      <small>Enterprise Supreme of God Mode Version</small>
+    </div>
+  </footer>
+
+  <!-- Repo Modal -->
+  <div class="modal fade" id="repoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="repoModalLabel">Repository Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="repoModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
